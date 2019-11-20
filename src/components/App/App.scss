@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+  'header header'
+  'aside news-container';
+  background: #141527;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+header {
+  margin-top: 2%;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  grid-area: aside;
+  width: 200px;
+
+  button {
+    margin: 3%;
+    height: 50px;
+    width: 190px;
+  }
+}
+
+h1 {
+  color: white;
+}
+
+span {
+  color: orange;
+}
