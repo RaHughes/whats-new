@@ -21,6 +21,17 @@ class App extends Component {
     this.fetchData();
   }
 
+  searchBar = (inputValue) => {
+    const category = this.state.currentCategory.filter(article => article.description.toLowerCase().includes(inputValue) || article.headline.toLowerCase().includes(inputValue));
+
+    if(category === [] || inputValue === '') {
+      this.setState({ currentCategory: this.state.categoryName})
+    } else {
+      this.setState({ currentCategory: category})
+    }
+  }
+
+
   fetchData = () => {
     fetch('https://whats-new-api.herokuapp.com/api/v1/news')
     .then(data => data.json())
@@ -38,7 +49,7 @@ class App extends Component {
       <main className="app">
         <header>
           <h1>Whats <span>New?</span></h1>
-          <SearchForm />
+          <SearchForm searchBar={this.searchBar}/>
         </header>
         <aside>
           <Menu pickNews={this.pickNews}/>
