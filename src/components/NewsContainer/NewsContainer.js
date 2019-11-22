@@ -7,6 +7,7 @@ const NewsContainer = ({articles}) => {
     
     const newsArticles = articles.map(news => {
       return (<NewsArticle
+        key={(Date.now() + Math.random())}
         img={news.img}
         headline={news.headline}
         description={news.description}

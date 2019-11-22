@@ -9,6 +9,7 @@ class SearchForm extends Component {
     search(event) {
       const inputValue  = event.target.parentNode.firstChild.value.toLowerCase();
       this.props.searchBar(inputValue)
+      event.target.parentNode.firstChild.value = ''
     }
 
     render() {

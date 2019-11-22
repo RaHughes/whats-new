@@ -4,13 +4,19 @@
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 .app {
+  margin: none;
   display: grid;
   grid-template-areas:
   'header header'
   'aside news-container';
   background: #141527;
   height: 100%;
+  min-height: 100vh;
   text-align: center;
   width: 100%;
 }
@@ -21,6 +27,14 @@ header {
   display: flex;
   flex-direction: row;
   height: 100px;
+
+  button {
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background-color: purple;
+  }
 }
 
 aside {
@@ -30,9 +44,16 @@ aside {
   width: 200px;
 
   button {
+    font-size: 1em;
+    border: none;
+    color: white;
+    background-color: #141527;
     margin: 3%;
     height: 50px;
     width: 190px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

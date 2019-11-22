@@ -4,6 +4,7 @@ import './App.scss';
 import NewsContainer from '../NewsContainer/NewsContainer';
 import SearchForm from '../SearchForm/SearchForm.js';
 import Menu from '../Menu/Menu.js';
+import '../../index.css'
 
 
 class App extends Component {
@@ -23,7 +24,6 @@ class App extends Component {
 
   searchBar = (inputValue) => {
     const category = this.state.currentCategory.filter(article => article.description.toLowerCase().includes(inputValue) || article.headline.toLowerCase().includes(inputValue));
-
     if(category === [] || inputValue === '') {
       this.setState({ currentCategory: this.state.categoryName})
     } else {
@@ -37,7 +37,7 @@ class App extends Component {
     .then(data => data.json())
     .then(data => this.setState({ local: data.local, technology: data.technology, entertainment: data.entertainment, science: data.science, health: data.health }))
     .catch(error => console.log(error))
-    }
+  }
 
   pickNews = (category) => {
     this.setState({ currentCategory: this.state[category] });
